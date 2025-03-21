@@ -103,12 +103,12 @@
 // }
 // if (str.indexOf(character) !== index){
 //     document.write(`The index of ${character} is ${str.indexOf(character)}`);
-    
+
 // }
 // else{
-    
+
 //     document.write(`${index}`);
-    
+
 // }
 // findIndex(str,character)
 
@@ -229,12 +229,29 @@
 //  Q   #   10
 
 
-let note1 = 100 //5
-let note2 = 50  //1
-let note3 = 10  //2
-let userAmount = 570
+let userAmount = Number(prompt("Enter your amount")) // 280
+let hundredNotes = 100
+let fiftyNotes = 50
+let tenNotes = 10
 
-function withdrawNotes(){
+function withdrawNotes() {
+    let amount1 = parseInt(userAmount / hundredNotes) // 280/100=2
+    userAmount = userAmount - (amount1 * hundredNotes) // 280 - (2 *100) = 80
+    console.log(userAmount); // 80
 
+    let amount2 = parseInt(userAmount / fiftyNotes) // 80/50 = 1
+   
+    userAmount = userAmount - (amount2 * fiftyNotes) // 80 - (1*50) = 30
+    console.log(userAmount); // 30
+
+    let amount3 = parseInt(userAmount / tenNotes) // 30/10 = 3
+    
+    userAmount = userAmount - (amount3 * tenNotes) // 30 - (3*10) = 0
+    console.log(userAmount); // 0
+
+    document.write(`Quantity of hundred notes  are: ${amount1} <br />`)
+    document.write(`Quantity of fifty notes  are: ${amount2} <br />`)
+    document.write(`Quantity of ten notes  are: ${amount3}`)
+    
 }
 withdrawNotes()
